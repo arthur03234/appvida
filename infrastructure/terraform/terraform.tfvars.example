@@ -1,0 +1,22 @@
+aws_region     = "sa-east-1"
+environment    = "production"
+project_name   = "appvida"
+vpc_cidr       = "10.0.0.0/16"
+
+availability_zones = ["sa-east-1a", "sa-east-1b", "sa-east-1c"]
+
+# Sensitive variables - set via environment variables or AWS Secrets Manager
+# mongodb_uri = "mongodb+srv://..."
+# jwt_secret  = "your-jwt-secret"
+
+# Service configurations
+api_gateway_cpu    = 256
+api_gateway_memory = 512
+
+auth_service_cpu    = 256
+auth_service_memory = 512
+
+user_service_cpu    = 256
+user_service_memory = 512
+
+desired_count = 2
