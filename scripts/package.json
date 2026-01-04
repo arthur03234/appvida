@@ -1,0 +1,12 @@
+{
+  "name": "appvida-scripts",
+  "version": "1.0.0",
+  "description": "Scripts de setup e utilitários para AppVida",
+  "private": true,
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "scripts": {
+    "setup-db": "node setup-mongodb.js"
+  }
+}
