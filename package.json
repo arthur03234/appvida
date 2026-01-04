@@ -1,0 +1,28 @@
+{
+  "name": "appvida",
+  "version": "1.0.0",
+  "description": "Solução web de microsserviços para cadastro de usuários",
+  "private": true,
+  "workspaces": [
+    "services/api-gateway",
+    "services/auth-service",
+    "services/user-service",
+    "services/shared",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "docker-compose up",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
