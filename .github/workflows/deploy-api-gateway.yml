@@ -63,14 +63,13 @@ jobs:
           memory: 2
           port: 3000
           wait-for-service-stability-seconds: 600
-          copy-env-vars: |
-            NODE_ENV
-            PORT
-            JWT_SECRET
-            MONGODB_URI
-            AUTH_SERVICE_URL
-            USER_SERVICE_URL
-            CORS_ORIGIN
+          runtime-environment-variables: |
+            NODE_ENV=production
+            PORT=3000
+            JWT_SECRET=${{ secrets.JWT_SECRET }}
+            MONGODB_URI=${{ secrets.MONGODB_URI }}
+            AUTH_SERVICE_URL=${{ secrets.AUTH_SERVICE_URL }}
+            USER_SERVICE_URL=${{ secrets.USER_SERVICE_URL }}
 
       - name: App Runner URL
         run: echo "App Runner URL ${{ steps.deploy-apprunner.outputs.service-url }}"
