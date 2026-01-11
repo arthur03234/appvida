@@ -85,11 +85,28 @@ docker-compose up
 - **User Service**: http://localhost:3002
 - **Frontend**: http://localhost:3003
 
+## 🚀 Deploy na AWS
+
+Este projeto usa **GitHub Actions + ECR + App Runner** para deploy automático, **sem precisar de OAuth GitHub-AWS**.
+
+- **[Deploy Rápido (3 passos)](./QUICK-DEPLOY.md)** ⚡ - Comece aqui!
+- **[Guia Completo de Deploy](./DEPLOY-GITHUB-ACTIONS.md)** - Documentação detalhada
+
+### Deploy Automático
+
+Toda vez que você faz `git push` na branch `main`, o GitHub Actions:
+1. Compila a aplicação
+2. Cria imagem Docker
+3. Envia para ECR
+4. Atualiza App Runner automaticamente
+
+**Custo**: ~$10-16/mês para aplicação com pouco tráfego.
+
 ## 📝 Documentação
 
 - [Arquitetura](./docs/ARCHITECTURE.md)
 - [Guia de Desenvolvimento](./docs/DEVELOPMENT.md)
-- [Deploy na AWS](./docs/DEPLOYMENT.md)
+- [Banco de Dados](./docs/DATABASE.md)
 - [API Documentation](./docs/API.md)
 
 ## 🤝 Contribuindo
